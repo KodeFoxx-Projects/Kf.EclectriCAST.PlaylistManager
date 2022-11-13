@@ -29,6 +29,27 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-OneLiner.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-WrongOrder.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-NoCaps.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-NoComments.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show-EmptyLines.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show-Empty.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Shows\ShowDataSheets\Show.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="xunit.runner.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

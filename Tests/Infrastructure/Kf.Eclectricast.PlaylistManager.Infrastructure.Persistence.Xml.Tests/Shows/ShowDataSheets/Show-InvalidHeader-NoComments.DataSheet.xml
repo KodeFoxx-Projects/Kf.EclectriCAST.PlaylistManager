@@ -1,0 +1,53 @@
+DATA_TYPE=XML
+DATA_VERSION=1
+
+<Show
+  Name = "The EclectriCAST"
+  EpisodeNumber = "99">
+
+	<Playlist>
+		<![CDATA[
+      00:00:00 Intro
+      00:00:43 Peter Elm - Black Sheep
+      00:04:00 Charlotte Adigéry & Bolis Pupul - Ceci N'Est Pas Un Cliché
+      00:07:28 Dana Jean Phoenix & Powernerd - Moves Moves Moves
+      00:11:00 Spray - Hammered In An Airport
+      00:13:39 Sierra - Gone (NEUS remix)
+      00:11:02 Sally Dige - Be Gone
+      00:15:18 Selah Sue - You (S+C+A+R+R remix)
+      00:17:59 Junksista ft. Emke (Black Nail Cabaret) - Do You Wanna
+      00:21:35 X-RL7 ft. Nyxx - Under My Spell
+      00:25:12 Sick Jokes - This Is The Beginning
+      00:29:05 Lords Of Acid - Feed My Hungry Soul
+      00:32:11 Extra Credit - It's Over
+      00:36:05 Movulango - Other Way
+      00:38:44 Sally Dige - Be Gone
+      00:42:58 Purple Fog Side & Elsehow - End Of Summer
+      00:47:45 Psy'Aviah ft. Marieke Lightband - My Secrets (Entrzelle 7" remix)
+      00:52:45 diskonnekted - Yesteryears (club version)
+      00:56:02 Mari Kattman - Fever Shakes
+      01:00:00 End
+    ]]>
+	</Playlist>
+
+	<AirDates>
+		<AirDate
+		  Date = "20221124"
+		  Station = "Wax Radio Indianapolis"/>
+		<AirDate
+		  Date = "20221125"
+		  Station = "Big Satsuma Radio"/>
+	</AirDates>
+
+	<Templates>
+		<Template
+		  Name = "Facebook">
+			<![CDATA[
+        📻 #AllAboutTheMusic, #eclectic #electronica #exploration. I hereby present the stars of The EclectriCast #{{episode_number}}: {{facebook_list}}.
+
+        🔊 aired {{air_date_human_text}} on Wax Radio Indianapolis (2PM EDT / 8PM CEST - waxradioindy.com); and {{air_date_human_text}} on Big Satsuma Radio (10PM BST / 11PM CEST - bigsatsumaradio.com).\n
+        🎧 or streamable on MixCloud at https://www.mixcloud.com/psyaviah/psyaviahs-eclectricast-{{episode_number_trailing_zero}}-on-big-satsuma-radio-wax-radio-indianapolis/.
+      ]]>
+		</Template>
+	</Templates>
+</Show>
