@@ -31,13 +31,11 @@ public sealed class XmlDatav1SegmentParser : ISegmentParser
         {
             return remainder?.ToLower() switch
             {
-
                 "outro" or "end" => JingleSegment.CreateOutro(startTime.TimeSpan, remainder),
                 "intro" or "start" => JingleSegment.CreateIntro(startTime.TimeSpan, remainder),
                 _ => JingleSegment.CreateJingle(startTime.TimeSpan, SegmentType.Jingle, remainder)
             };
         }
-
 
         var song = TryParseSongParts(remainder);
 

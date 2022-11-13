@@ -37,12 +37,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistMan
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8BB74D89-9097-4F16-B41F-8A4A8346B302}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests", "Tests\Infrastructure\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests.csproj", "{32621F92-AAF6-41F6-A860-DE59C67F54B6}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(github workflows)", "(github workflows)", "{A872A19C-7C22-45D8-BB8C-3ED85A3B00B4}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build-dotnet-windows.yml = .github\workflows\build-dotnet-windows.yml
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Tests", "Tests\Infrastructure\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Tests\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Tests.csproj", "{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,10 +70,10 @@ Global
 		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,7 +91,7 @@ Global
 		{AAB405AD-DCA8-4E97-A16E-A08E25533799} = {CD9B8FE1-75A1-4A2C-9441-FB2DE0F785E7}
 		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD} = {4C9291F3-4127-41AE-A9AD-9C662D5D6341}
 		{8BB74D89-9097-4F16-B41F-8A4A8346B302} = {7E7D2598-D418-4439-BFFB-48AAF53970AC}
-		{32621F92-AAF6-41F6-A860-DE59C67F54B6} = {8BB74D89-9097-4F16-B41F-8A4A8346B302}
+		{89BB0337-01E8-4B4F-A1E1-AA5F9C21245D} = {8BB74D89-9097-4F16-B41F-8A4A8346B302}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E92E805-7D5F-4E81-B7D1-09F8F09B60B7}
