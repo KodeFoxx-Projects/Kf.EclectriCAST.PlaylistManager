@@ -38,7 +38,7 @@ public sealed class XmlDatav1ShowParser : IShowParser
         if (FileIsNullEmptyOrWhiteSpace(showDataFile))
             return Show.Empty;
 
-        var header = TryParseHeader(showDataFile);
+        var headerInfo = TryParseHeader(showDataFile);
 
         throw new NotImplementedException();
     }
