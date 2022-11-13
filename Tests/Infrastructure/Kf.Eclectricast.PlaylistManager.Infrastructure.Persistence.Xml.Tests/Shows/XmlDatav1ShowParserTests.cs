@@ -26,6 +26,7 @@ public sealed class XmlDatav1ShowParserTests
     [InlineData("Show-InvalidHeader-NoComments", "at line 1, expected opening statement to be '<!--'")]
     [InlineData("Show-InvalidHeader-NoCaps", "at line 2, expected statement to be 'DATA_TYPE'")]
     [InlineData("Show-InvalidHeader-WrongOrder", "at line 2, expected statement to be 'DATA_TYPE'")]
+    [InlineData("Show-InvalidHeader-WrongVersion", "expected 'DATA_VERSION={versionNumber}' where 'versionNumber' expected be '1'")]
     [InlineData("Show-InvalidHeader-OneLiner", "at line 1, expected opening statement to be '<!--'")]
     public void File_with_invalid_header_throws_ArgumentException(
         string name, string error

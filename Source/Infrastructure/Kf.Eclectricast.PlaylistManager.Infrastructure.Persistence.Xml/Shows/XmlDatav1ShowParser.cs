@@ -89,6 +89,11 @@ public sealed class XmlDatav1ShowParser : IShowParser
         );
 
         var version = Int32.Parse(headerLines[3].Replace("DATA_VERSION=", ""));
+        if (version != 1)
+            throw new ArgumentException(
+                $"Header is not correctly formed at line 3, expected version to be '1' but was '{version}'.",
+                nameof(file)
+            );
 
         return (
             DataType: "XML",

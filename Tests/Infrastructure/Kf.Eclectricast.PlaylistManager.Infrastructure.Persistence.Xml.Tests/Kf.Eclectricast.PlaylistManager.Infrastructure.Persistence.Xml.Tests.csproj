@@ -32,6 +32,9 @@
     <None Update="Shows\ShowDataSheets\Show-InvalidHeader-OneLiner.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-WrongVersion.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Shows\ShowDataSheets\Show-InvalidHeader-WrongOrder.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
