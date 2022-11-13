@@ -42,16 +42,20 @@ public sealed class XmlDatav1PlaylistParserTests
         var sut = new XmlDatav1PlaylistParser(new XmlDatav1SegmentParser())
             .Parse(playlist);
 
-        sut.Segments.First().Type.ShouldBe(SegmentType.Intro);
-        sut.Segments.Last().Type.ShouldBe(SegmentType.Outro);
-
         TimeSpan? previousTimeSpan = null;
-        foreach (var segment in sut.Segments)
+        for (int i = 0; i < expectedNumberOfSegments; i++)
         {
+            var segment = sut.Segments.ElementAt(i);
+
             if (previousTimeSpan != null)
                 segment.Start.ShouldBeGreaterThan(previousTimeSpan.Value);
 
-            previousTimeSpan = segment.Start;
+            if (i == 0)
+                segment.Type.ShouldBe(SegmentType.Intro);
+            if (i == expectedNumberOfSegments - 1)
+                segment.Type.ShouldBe(SegmentType.Outro);
+            if (i != 0 && i != expectedNumberOfSegments - 1)
+                segment.Type.ShouldBe(SegmentType.Song);
         }
     }
 
