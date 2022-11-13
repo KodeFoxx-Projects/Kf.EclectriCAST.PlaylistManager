@@ -38,16 +38,17 @@ public sealed class XmlDatav1ShowParser : IShowParser
         if (FileIsNullEmptyOrWhiteSpace(showDataFile))
             return Show.Empty;
 
-        var headerInfo = TryParseHeader(showDataFile);
+        var header = TryParseHeader(showDataFile);
+        var show = Show.Create(header);
 
-        throw new NotImplementedException();
+        return show;
     }
 
     private bool FileIsNullEmptyOrWhiteSpace(FileInfo file)
         => GetCleanedLines(file)
             .Count() == 0;
 
-    private (string DataType, int Version) TryParseHeader(FileInfo file)
+    private ShowHeaderInfo TryParseHeader(FileInfo file)
     {
         var headerLines = Guard.Against.InvalidInput(
             GetCleanedLines(file).Take(4).ToList(),
@@ -83,22 +84,19 @@ public sealed class XmlDatav1ShowParser : IShowParser
         );
 
         Guard.Against.InvalidInput(
-            headerLines[3],
+            headerLines[2],
             nameof(file), l => l.Contains("DATA_VERSION="),
             "Header is not correctly formed, expected 'DATA_VERSION={versionNumber}' where 'versionNumber' expected be '1'."
         );
 
-        var version = Int32.Parse(headerLines[3].Replace("DATA_VERSION=", ""));
+        var version = Int32.Parse(headerLines[2].Replace("DATA_VERSION=", ""));
         if (version != 1)
             throw new ArgumentException(
                 $"Header is not correctly formed at line 3, expected version to be '1' but was '{version}'.",
                 nameof(file)
             );
 
-        return (
-            DataType: "XML",
-            Version: version
-        );
+        return ShowHeaderInfo.Create("XML", version, file);
     }
 
     private static List<string> GetCleanedLines(FileInfo file)
