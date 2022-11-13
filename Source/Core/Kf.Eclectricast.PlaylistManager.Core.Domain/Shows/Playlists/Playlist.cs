@@ -13,6 +13,12 @@ public sealed class Playlist : ValueObject
     public static readonly Playlist Empty = new();
 
     /// <summary>
+    /// Creates a <see cref="Playlist"/>.
+    /// </summary>    
+    public static Playlist Create()
+        => new();
+
+    /// <summary>
     /// Creates an empty <see cref="Playlist"/>.
     /// </summary>
     private Playlist()
@@ -25,17 +31,33 @@ public sealed class Playlist : ValueObject
     /// <param name="segments"></param>
     private Playlist(IEnumerable<Segment>? segments)
         : base()
-        => Segments = segments ?? Enumerable.Empty<Segment>();
+        => _segments = segments?.ToList() ?? new List<Segment>();
 
     /// <summary>
     /// Gets the segments of this <see cref="Playlist"/>.
     /// </summary>
-    public IEnumerable<Segment> Segments { get; init; }
+    public IEnumerable<Segment> Segments => (
+        _segments == null
+            ? Enumerable.Empty<Segment>().ToList().AsReadOnly()
+            : _segments.AsReadOnly()
+        )
+        .OrderBy(s => s.Start);
+
+    private List<Segment> _segments = new List<Segment>();
 
     /// <summary>
     /// Determines whether this <see cref="Playlist"/> has any <see cref="Segment"/>s.
     /// </summary>
     public bool HasSegments => Segments != null && Segments.Any();
+
+    /// <summary>
+    /// Adds a <see cref="Segment"/> to the playlist.
+    /// </summary>        
+    public Playlist AddSegment(Segment segment)
+    {
+        _segments.Add(segment);
+        return this;
+    }
 
     /// <inheritdoc />    
     protected override IEnumerable<object?> GetEqualityComponents()

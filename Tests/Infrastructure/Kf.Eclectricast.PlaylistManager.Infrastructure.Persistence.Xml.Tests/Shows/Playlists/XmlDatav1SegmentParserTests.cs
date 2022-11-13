@@ -77,6 +77,10 @@ public sealed class XmlDatav1SegmentParserTests
                 SongSegment.CreateSong(new TimeSpan(0, 55, 16), "Artist1-Artist2", "Song Name (club trance remix - radio edit)")
             ),
             (
+                "00:39:48 Rohn-Lederman - Watch Out (Assemblage 23 remix)",
+                SongSegment.CreateSong(new TimeSpan(0, 39, 48), "Rohn-Lederman", "Watch Out (Assemblage 23 remix)")
+            ),
+            (
                 "01:00:00 Outro",
                 JingleSegment.CreateOutro(new TimeSpan(1, 0, 0), "Outro")
             ),
