@@ -29,31 +29,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Shows\ShowDataSheets\Show-OnlyHeader.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-OnlyHeader.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-OneLiner.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-InvalidHeader-OneLiner.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-WrongVersion.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-InvalidHeader-WrongVersion.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-WrongOrder.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-InvalidHeader-WrongOrder.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-NoCaps.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-InvalidHeader-NoCaps.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-InvalidHeader-NoComments.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-InvalidHeader-NoComments.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-EmptyLines.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-EmptyLines.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show-Empty.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show-Empty.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Shows\ShowDataSheets\Show.DataSheet.xml">
+    <None Update="TestData\Xmlv1\ShowDataSheets\Show.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="xunit.runner.json">

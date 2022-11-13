@@ -67,7 +67,8 @@ public sealed class XmlDatav1ShowParserTests
         => new FileInfo(
                 Path.Combine(
                     Environment.CurrentDirectory,
-                    "Shows",
+                    "TestData",
+                    "Xmlv1",
                     "ShowDataSheets",
                     $"{name}.DataSheet.xml"
                 )
