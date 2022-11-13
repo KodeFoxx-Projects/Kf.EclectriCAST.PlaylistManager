@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7E7D2598-D418-4439-BFFB-48AAF53970AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{C6CC94D4-EACB-426A-A70A-26B78DABB10B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(root)", "(root)", "{A94F444C-D827-4BB5-917A-BC7DEBB93519}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A42F3363-A703-446A-B36A-158C8FBA14A2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{6740A11F-02B2-4490-819C-775295CEB235}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{DBD37E71-FA2A-4F16-A46C-BD6A5E9674F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{4C9291F3-4127-41AE-A9AD-9C662D5D6341}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Core.Domain", "Source\Core\Kf.Eclectricast.PlaylistManager.Core.Domain\Kf.Eclectricast.PlaylistManager.Core.Domain.csproj", "{BD7E8019-0A30-49E1-B953-BC2DD5616E44}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Common", "Source\Common\Kf.Eclectricast.PlaylistManager.Common\Kf.Eclectricast.PlaylistManager.Common.csproj", "{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Common.UnitTests", "Tests\Common\Kf.Eclectricast.PlaylistManager.Common.UnitTests\Kf.Eclectricast.PlaylistManager.Common.UnitTests.csproj", "{F3A7E055-57F9-4AEC-9D3D-7F281D249671}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{698AC46F-5A9E-4753-89F0-E16530682805}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CD9B8FE1-75A1-4A2C-9441-FB2DE0F785E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Core.UnitTests", "Tests\Core\Kf.Eclectricast.PlaylistManager.Core.UnitTests\Kf.Eclectricast.PlaylistManager.Core.UnitTests.csproj", "{AAB405AD-DCA8-4E97-A16E-A08E25533799}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml", "Source\Infrastructure\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.csproj", "{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8BB74D89-9097-4F16-B41F-8A4A8346B302}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests", "Tests\Infrastructure\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests\Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.UnitTests.csproj", "{32621F92-AAF6-41F6-A860-DE59C67F54B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(github workflows)", "(github workflows)", "{A872A19C-7C22-45D8-BB8C-3ED85A3B00B4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-dotnet-windows.yml = .github\workflows\build-dotnet-windows.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD7E8019-0A30-49E1-B953-BC2DD5616E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7E8019-0A30-49E1-B953-BC2DD5616E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7E8019-0A30-49E1-B953-BC2DD5616E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7E8019-0A30-49E1-B953-BC2DD5616E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3A7E055-57F9-4AEC-9D3D-7F281D249671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3A7E055-57F9-4AEC-9D3D-7F281D249671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3A7E055-57F9-4AEC-9D3D-7F281D249671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3A7E055-57F9-4AEC-9D3D-7F281D249671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB405AD-DCA8-4E97-A16E-A08E25533799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB405AD-DCA8-4E97-A16E-A08E25533799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB405AD-DCA8-4E97-A16E-A08E25533799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB405AD-DCA8-4E97-A16E-A08E25533799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32621F92-AAF6-41F6-A860-DE59C67F54B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A42F3363-A703-446A-B36A-158C8FBA14A2} = {C6CC94D4-EACB-426A-A70A-26B78DABB10B}
+		{6740A11F-02B2-4490-819C-775295CEB235} = {C6CC94D4-EACB-426A-A70A-26B78DABB10B}
+		{DBD37E71-FA2A-4F16-A46C-BD6A5E9674F6} = {C6CC94D4-EACB-426A-A70A-26B78DABB10B}
+		{4C9291F3-4127-41AE-A9AD-9C662D5D6341} = {C6CC94D4-EACB-426A-A70A-26B78DABB10B}
+		{BD7E8019-0A30-49E1-B953-BC2DD5616E44} = {A42F3363-A703-446A-B36A-158C8FBA14A2}
+		{AACA49B1-64E9-4283-8631-BB0ADEA7F2C8} = {6740A11F-02B2-4490-819C-775295CEB235}
+		{F3A7E055-57F9-4AEC-9D3D-7F281D249671} = {698AC46F-5A9E-4753-89F0-E16530682805}
+		{698AC46F-5A9E-4753-89F0-E16530682805} = {7E7D2598-D418-4439-BFFB-48AAF53970AC}
+		{CD9B8FE1-75A1-4A2C-9441-FB2DE0F785E7} = {7E7D2598-D418-4439-BFFB-48AAF53970AC}
+		{AAB405AD-DCA8-4E97-A16E-A08E25533799} = {CD9B8FE1-75A1-4A2C-9441-FB2DE0F785E7}
+		{5CFD41F5-E0A5-4EB4-A2CD-13444B0E0BDD} = {4C9291F3-4127-41AE-A9AD-9C662D5D6341}
+		{8BB74D89-9097-4F16-B41F-8A4A8346B302} = {7E7D2598-D418-4439-BFFB-48AAF53970AC}
+		{32621F92-AAF6-41F6-A860-DE59C67F54B6} = {8BB74D89-9097-4F16-B41F-8A4A8346B302}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4E92E805-7D5F-4E81-B7D1-09F8F09B60B7}
+	EndGlobalSection
+EndGlobal
