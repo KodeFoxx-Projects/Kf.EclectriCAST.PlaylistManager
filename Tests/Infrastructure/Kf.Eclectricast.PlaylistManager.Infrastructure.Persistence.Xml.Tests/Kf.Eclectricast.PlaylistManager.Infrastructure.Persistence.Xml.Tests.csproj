@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Shows\ShowDataSheets\Show-OnlyHeader.DataSheet.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Shows\ShowDataSheets\Show-InvalidHeader-OneLiner.DataSheet.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

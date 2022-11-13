@@ -2,15 +2,17 @@
 
 public sealed class XmlDatav1ShowParserTests
 {
-    [Fact]
-    public void Header_for_valid_file_gets_parsed_in_show()
+    [Theory]
+    [InlineData("Show")]
+    [InlineData("Show-OnlyHeader")]
+    public void Header_for_valid_file_gets_parsed_in_show(string name)
     {
-        var sut = new XmlDatav1ShowParser().Parse(GetDataSheetXmlFile("Show"));
+        var sut = new XmlDatav1ShowParser().Parse(GetDataSheetXmlFile(name));
 
         sut.Header.ShouldNotBeNull();
         sut.Header.Format.ShouldBe("XML");
         sut.Header.Version.ShouldBe(1);
-        sut.Header.File.Name.ShouldBe("Show.DataSheet.xml");
+        sut.Header.File.Name.ShouldBe($"{name}.DataSheet.xml");
     }
 
     [Fact]

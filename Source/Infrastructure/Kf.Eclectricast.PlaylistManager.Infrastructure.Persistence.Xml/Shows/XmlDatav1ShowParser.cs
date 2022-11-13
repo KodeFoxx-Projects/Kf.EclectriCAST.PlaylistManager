@@ -1,4 +1,5 @@
 ﻿using Ardalis.GuardClauses;
+using System.Xml;
 
 namespace Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Shows;
 
@@ -20,10 +21,6 @@ namespace Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Shows;
 /// </remarks>
 public sealed class XmlDatav1ShowParser : IShowParser
 {
-    /// <inheritdoc />    
-    public Show Parse(string show)
-        => throw new NotImplementedException();
-
     /// <inheritdoc />
     public Show Parse(FileInfo showDataFile)
     {
@@ -39,6 +36,7 @@ public sealed class XmlDatav1ShowParser : IShowParser
             return Show.Empty;
 
         var header = TryParseHeader(showDataFile);
+        var showXmlData = TryGetXmlData(showDataFile);
         var show = Show.Create(header);
 
         return show;
@@ -97,6 +95,22 @@ public sealed class XmlDatav1ShowParser : IShowParser
             );
 
         return ShowHeaderInfo.Create("XML", version, file);
+    }
+
+    private XmlDocument TryGetXmlData(FileInfo file)
+    {
+        var xmlString = String.Join(
+                Environment.NewLine,
+                GetCleanedLines(file).Skip(4)
+            );
+
+        if (String.IsNullOrWhiteSpace(xmlString))
+            xmlString = $"<Show />";
+
+        var xmlDocument = new XmlDocument();
+        xmlDocument.LoadXml(xmlString);
+
+        return xmlDocument;
     }
 
     private static List<string> GetCleanedLines(FileInfo file)
