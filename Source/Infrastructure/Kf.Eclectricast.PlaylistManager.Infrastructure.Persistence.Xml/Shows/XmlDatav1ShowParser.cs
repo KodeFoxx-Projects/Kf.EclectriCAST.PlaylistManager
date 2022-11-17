@@ -4,7 +4,7 @@ using System.Xml;
 namespace Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Shows;
 
 /// <summary>
-/// Parses an XML Show v1 file. 
+/// Parses an XML Show v1 file.
 /// </summary>
 /// <remarks>
 /// Expected format of file is an xml-based file with first four lines as plain string data.
@@ -15,12 +15,21 @@ namespace Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Shows;
 ///  DATA_VERSION = 1
 /// -->]]>"
 /// The entry of the xml-based data that follows should be the <![CDATA[<Show/>]]> element,
-/// holding the data of the playlist in raw string format, the air dates per channel as xml-data and 
+/// holding the data of the playlist in raw string format, the air dates per channel as xml-data and
 /// the templates as raw string data per social network.
 /// </example>
 /// </remarks>
 public sealed class XmlDatav1ShowParser : IShowParser
 {
+    private readonly IPlaylistParser _playlistParser;
+
+    /// <summary>
+    /// Creates a new <see cref="XmlDatav1ShowParser"/>.
+    /// </summary>
+    /// <param name="playlistParser"></param>
+    public XmlDatav1ShowParser(IPlaylistParser playlistParser)
+        => _playlistParser = Guard.Against.Null(playlistParser);
+
     /// <inheritdoc />
     public Show Parse(FileInfo showDataFile)
     {
@@ -39,7 +48,36 @@ public sealed class XmlDatav1ShowParser : IShowParser
         var showXmlData = TryGetXmlData(showDataFile);
         var show = Show.Create(header);
 
+        if (showXmlData is null
+            || showXmlData.InnerXml.Equals("<Show />")
+            || showXmlData.InnerXml.Equals("<Show/>")
+            || showXmlData.InnerXml.Equals("<Show></Show>")
+        )
+            return show;
+
+        ParseShow(showXmlData, show);
+        ParseShowPlaylist(showXmlData, show);
+
         return show;
+    }
+
+    private void ParseShow(XmlDocument showXmlDocument, Show show)
+    {
+        var showXmlData = showXmlDocument.DocumentElement;
+
+        var name = showXmlData.Attributes["Name"].Value;
+        show.ChangeName(name);
+
+        var number = Int32.Parse(showXmlData.Attributes["EpisodeNumber"].Value);
+        show.ChangeNumber(number);
+    }
+
+    private void ParseShowPlaylist(XmlDocument showXmlData, Show show)
+    {
+        var playlistXmlData = showXmlData.DocumentElement!.SelectSingleNode("//Show/Playlist");
+        var playlistStringData = playlistXmlData?.FirstChild?.Value ?? String.Empty;
+        var playlist = _playlistParser.Parse(playlistStringData);
+        show.ReplacePlaylist(playlist);
     }
 
     private bool FileIsNullEmptyOrWhiteSpace(FileInfo file)

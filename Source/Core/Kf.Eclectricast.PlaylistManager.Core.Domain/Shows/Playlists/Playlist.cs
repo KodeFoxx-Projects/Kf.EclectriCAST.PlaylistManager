@@ -14,7 +14,7 @@ public sealed class Playlist : ValueObject
 
     /// <summary>
     /// Creates a <see cref="Playlist"/>.
-    /// </summary>    
+    /// </summary>
     public static Playlist Create()
         => new();
 
@@ -26,7 +26,7 @@ public sealed class Playlist : ValueObject
     { }
 
     /// <summary>
-    /// Creates a 
+    /// Creates a
     /// </summary>
     /// <param name="segments"></param>
     private Playlist(IEnumerable<Segment>? segments)
@@ -52,14 +52,20 @@ public sealed class Playlist : ValueObject
 
     /// <summary>
     /// Adds a <see cref="Segment"/> to the playlist.
-    /// </summary>        
+    /// </summary>
     public Playlist AddSegment(Segment segment)
     {
         _segments.Add(segment);
         return this;
     }
 
-    /// <inheritdoc />    
+    public Playlist AddSegments(IEnumerable<Segment> segments)
+    {
+        _segments.AddRange(segments);
+        return this;
+    }
+
+    /// <inheritdoc />
     protected override IEnumerable<object?> GetEqualityComponents()
         => new[] { Segments };
 }

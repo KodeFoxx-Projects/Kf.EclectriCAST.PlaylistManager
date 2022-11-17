@@ -7,7 +7,7 @@ public sealed class XmlDatav1ShowParserTests
     [InlineData("Show-OnlyHeader")]
     public void Header_for_valid_file_gets_parsed_in_show(string name)
     {
-        var sut = new XmlDatav1ShowParser().Parse(GetDataSheetXmlFile(name));
+        var sut = GetXmlDataShowParser().Parse(GetDataSheetXmlFile(name));
 
         sut.Header.ShouldNotBeNull();
         sut.Header.Format.ShouldBe("XML");
@@ -19,17 +19,44 @@ public sealed class XmlDatav1ShowParserTests
     public void File_parameter_that_is_null_throws_ArgumentException()
     {
         var exception = Should.Throw<ArgumentException>(
-            () => new XmlDatav1ShowParser().Parse((FileInfo)null!)
+            () => GetXmlDataShowParser().Parse((FileInfo)null!)
         );
 
         exception.ParamName.ShouldBe("showDataFile");
     }
 
     [Fact]
+    public void Valid_file_playlist_should_be_filled()
+    {
+        var sut = GetXmlDataShowParser().Parse(GetDataSheetXmlFile("Show"));
+
+        sut.Playlist.ShouldNotBeNull();
+        sut.Playlist.HasSegments.ShouldBeTrue();
+        sut.Playlist.Segments.Count().ShouldBe(20);
+    }
+
+    [Fact]
+    public void Valid_episodic_file_should_contain_number()
+    {
+        var sut = GetXmlDataShowParser().Parse(GetDataSheetXmlFile("Show"));
+
+        sut.Number.ShouldBe(99);
+        sut.IsEpisode.ShouldBeTrue();
+    }
+
+    [Fact]
+    public void Valid_file_should_contain_name()
+    {
+        var sut = GetXmlDataShowParser().Parse(GetDataSheetXmlFile("Show"));
+
+        sut.Name.ShouldBe("The EclectriCAST");
+    }
+
+    [Fact]
     public void File_that_does_not_exist_throws_ArgumentException()
     {
         var exception = Should.Throw<ArgumentException>(
-            () => new XmlDatav1ShowParser().Parse(GetDataSheetXmlFile(""))
+            () => GetXmlDataShowParser().Parse(GetDataSheetXmlFile(""))
         );
 
         exception.ParamName.ShouldBe("showDataFile");
@@ -46,7 +73,7 @@ public sealed class XmlDatav1ShowParserTests
     )
     {
         var exception = Should.Throw<ArgumentException>(
-            () => new XmlDatav1ShowParser().Parse(GetDataSheetXmlFile(name))
+            () => GetXmlDataShowParser().Parse(GetDataSheetXmlFile(name))
         );
 
         exception.ParamName.ShouldBe("file");
@@ -58,7 +85,7 @@ public sealed class XmlDatav1ShowParserTests
     [InlineData("Show-Empty")]
     [InlineData("Show-EmptyLines")]
     public void Empty_file_returns_empty_show(string name)
-        => new XmlDatav1ShowParser()
+        => GetXmlDataShowParser()
             .Parse(GetDataSheetXmlFile(name))
             .ShouldBe(Show.Empty);
 
@@ -73,4 +100,9 @@ public sealed class XmlDatav1ShowParserTests
                     $"{name}.DataSheet.xml"
                 )
             );
+
+    private XmlDatav1ShowParser GetXmlDataShowParser()
+        => new XmlDatav1ShowParser(
+            new XmlDatav1PlaylistParser(
+                new XmlDatav1SegmentParser()));
 }

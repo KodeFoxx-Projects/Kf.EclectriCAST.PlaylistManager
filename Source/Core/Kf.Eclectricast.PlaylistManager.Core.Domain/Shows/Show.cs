@@ -39,7 +39,7 @@ public sealed class Show : Entity
 
     /// <summary>
     /// Creates a new <see cref="Show"/>
-    /// </summary>    
+    /// </summary>
     private Show(
         long? id,
         ShowHeaderInfo? header,
@@ -67,20 +67,47 @@ public sealed class Show : Entity
     /// <summary>
     /// The playlist of the <see cref="Show"/>.
     /// </summary>
-    public Playlist Playlist { get; init; }
+    public Playlist Playlist { get; private set; }
 
     /// <summary>
     /// Name of the <see cref="Show"/>.
     /// </summary>
-    public string Name { get; init; }
+    public string Name { get; private set; }
 
     /// <summary>
     /// Episode number of the <see cref="Show"/>, if any.
     /// </summary>
-    public int? Number { get; init; }
+    public int? Number { get; private set; }
 
     /// <summary>
     /// Determines whether this show is part of a series of episodes.
     /// </summary>
     public bool IsEpisode => Number.HasValue;
+
+    /// <summary>
+    /// Replaces the current playlist by another one.
+    /// </summary>
+    public Show ReplacePlaylist(Playlist playlist)
+    {
+        Playlist = playlist;
+        return this;
+    }
+
+    /// <summary>
+    /// Changes the show's number
+    /// </summary>
+    public Show ChangeNumber(int? number)
+    {
+        Number = number;
+        return this;
+    }
+
+    /// <summary>
+    /// Changes the show's name
+    /// </summary>
+    public Show ChangeName(string name)
+    {
+        Name = name;
+        return this;
+    }
 }

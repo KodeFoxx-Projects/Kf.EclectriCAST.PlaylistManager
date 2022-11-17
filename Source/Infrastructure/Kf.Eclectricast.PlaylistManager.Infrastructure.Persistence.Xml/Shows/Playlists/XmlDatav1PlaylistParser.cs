@@ -11,17 +11,20 @@ public sealed class XmlDatav1PlaylistParser : IPlaylistParser
 
     /// <summary>
     /// Creates a new <see cref="XmlDatav1SegmentParser"/>.
-    /// </summary>    
+    /// </summary>
     public XmlDatav1PlaylistParser(ISegmentParser segmentParser)
         => _segmentParser = Guard.Against.Null(segmentParser);
 
-    /// <inheritdoc />   
+    /// <inheritdoc />
     public Playlist Parse(string playlistString)
     {
         if (String.IsNullOrWhiteSpace(playlistString))
             return Playlist.Empty;
 
-        var playlistLines = playlistString.Split(Environment.NewLine);
+        var playlistLines = playlistString.Split(Environment.NewLine)
+            .Where(playlistLine => !String.IsNullOrWhiteSpace(playlistLine))
+            .ToList();
+
         var playlist = Playlist.Create();
         foreach (var playlistLine in playlistLines)
         {
