@@ -1,5 +1,4 @@
-﻿using Ardalis.GuardClauses;
-using System.Xml;
+﻿using System.Xml;
 
 namespace Kf.Eclectricast.PlaylistManager.Infrastructure.Persistence.Xml.Shows;
 
