@@ -64,11 +64,15 @@ public sealed class XmlDatav1ShowParser : IShowParser
     {
         var showXmlData = showXmlDocument.DocumentElement;
 
-        var name = showXmlData.Attributes["Name"].Value;
-        show.ChangeName(name);
+        var name = showXmlData.Attributes["Name"];
+        if (name is null)
+            throw new ArgumentException("Could not find 'Name' argument in <Show />");
 
-        var number = Int32.Parse(showXmlData.Attributes["EpisodeNumber"].Value);
-        show.ChangeNumber(number);
+        show.ChangeName(name.Value);
+
+        var number = showXmlData.Attributes["EpisodeNumber"];
+        if (number is not null)
+            show.ChangeNumber(Int32.Parse(number.Value));
     }
 
     private void ParseShowPlaylist(XmlDocument showXmlData, Show show)
