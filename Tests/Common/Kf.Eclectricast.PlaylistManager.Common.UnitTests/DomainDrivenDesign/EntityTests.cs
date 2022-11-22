@@ -30,8 +30,8 @@ public sealed class EntityTests
     [Fact]
     public void When_both_are_null_they_are_equal()
     {
-        Person personA = null;
-        Person personB = null;
+        Person personA = null!;
+        Person personB = null!;
 
         (personA == personB).ShouldBeTrue();
         (personA != personB).ShouldBeFalse();
@@ -42,7 +42,7 @@ public sealed class EntityTests
     [Fact]
     public void When_only_one_is_null_they_are_not_equal()
     {
-        Person personA = null;
+        Person personA = null!;
         var personB = CreatePersonYvesSchelpe();
 
         (personA == personB).ShouldBeFalse();
@@ -78,7 +78,7 @@ public sealed class EntityTests
         act.ShouldThrow<ArgumentNullException>().ParamName.ShouldBe("id");
     }
 
-    private static Person CreatePersonWith(long id = 1, Name name = null)
+    private static Person CreatePersonWith(long id = 1, Name name = null!)
         => Person.Create(id, name);
     private static Person CreatePersonYvesSchelpe(long id = 1)
         => CreatePersonWith(id, Name.Create("Yves", "Schelpe"));
